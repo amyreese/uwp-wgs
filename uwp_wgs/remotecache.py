@@ -71,6 +71,13 @@ def write_remcache( remcache_path, data_path ):
         vdf_write( vdf, 0 )
 
 
+def make_remotecache(output_subdir):
+    save_path = Path(output_subdir)
+    remcache_path = Path(os.path.join(save_path.parent, "remotecache.vdf"))
+    write_remcache(remcache_path, save_path)
+    return str(remcache_path)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument( "save_dir", nargs=1, help="pc save dir" )

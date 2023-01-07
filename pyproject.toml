@@ -1,0 +1,33 @@
+[build-system]
+requires = ["flit_core"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "uwp-wgs"
+description = "Decode UWP save game containers"
+readme = "README.md"
+requires-python = ">= 3.10"
+license = {file="LICENSE"}
+authors = [
+    {name="Amethyst Reese", email="amy@n7.gg"},
+    {name="NeryK", email="96932938+NeryK@users.noreply.github.com"},
+]
+dependencies = [
+    "click >= 7.0.0",
+    "rich >= 13.0.0",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "black == 22.10.0",
+    "flake8 == 6.0.0",
+    "flake8-bugbear == 22.9.23",
+    "mypy == 0.981",
+    "ufmt == 2.0.1",
+    "usort == 1.0.5",
+]
+
+[project.scripts]
+uwp-wgs = "uwp_wgs.__main__:main"
+
